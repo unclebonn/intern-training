@@ -11,3 +11,137 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.header {
+  background-color: rgb(68, 156, 68);
+  position: fixed;
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+}
+
+.header:hover .hover {
+  display: block;
+}
+
+.header > .hover {
+  display: none;
+  background-color: rgb(68, 156, 68);
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  border-radius: 10px;
+}
+
+.header .function {
+  margin-top: 40px;
+  display: inline-grid;
+
+}
+
+
+
+.header .function a {
+  padding-right: 120px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+/* table {
+  width: 1303.78px;
+  position: absolute;
+  right: 0px;
+} */
+table {
+  width: 1450px;
+  margin: 0px auto;
+}
+
+table tbody tr td input {
+  width: 100%;
+  border: 0;
+  padding: 10px 0px;
+}
+
+table tbody .listProducts {
+  text-align: center;
+}
+
+table tbody .listProducts td input::placeholder {
+  width: 100%;
+  text-align: center;
+}
+
+.content .btn-product {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.content .btn-product .btn-create-product {
+  padding-right: 50px;
+}
+
+.table-order {
+  position: absolute;
+  top: 13vh;
+  left: 30vh;
+}
+
+.table-order .table-order-form .create-order {
+  border: 1px dashed black;
+  width: 606px;
+  padding: 30px;
+}
+
+
+.table-order .table-order-form .create-order .create-orderInfo .formData {
+  width: calc(50% - 50px);
+  margin: 10px;
+}
+
+
+.table-order .table-order-form .create-order .create-orderInfo .formData:last-child {
+  /* display: block; */
+  width: 100%;
+}
+
+.table-order .table-order-form .create-order .create-orderInfo .formData:last-child button {
+  padding: 8px;
+  background-color: #9ab3a2;
+  cursor: pointer;
+}
+
+.table-order .table-order-form .create-order .create-orderInfo .formData:last-child button:hover {
+  background-color: rgb(93, 204, 93);
+  transition: 0.2s ease-in-out;
+}
+
+.table-order .table-order-form .create-order .create-orderInfo .formData label {
+  margin-right: 50px;
+}
+
+.table-order .table-order-form .create-order .create-orderInfo .formData input {
+  width: 160px;
+}
+
+
+.title {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 900px !important;
+  margin: 0;
+}
+
