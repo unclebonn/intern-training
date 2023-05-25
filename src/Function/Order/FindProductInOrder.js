@@ -19,7 +19,7 @@ export default function FindProductInOrder() {
         }
     ])
 
-
+    // show the order of the user
     useEffect(() => {
         CallApi(`api/Orders/${id}`, 'GET', null)
             .then(item => {
@@ -27,6 +27,8 @@ export default function FindProductInOrder() {
             })
     }, [id])
 
+
+    // delele item from cart
     const handleDelete = (id, product) => {
         CallApi(`api/OrderDetails?orderId=${id}&productId=${product}`, 'DELETE', null)
             .then(item => {
@@ -35,7 +37,7 @@ export default function FindProductInOrder() {
             })
     }
 
-
+    // update quantity
     const handleUpdate = (productID) => {
         CallApi(`api/OrderDetails?orderId=${id}&productId=${productID}`, 'PATCH', formData)
             .then(item => {
@@ -46,7 +48,7 @@ export default function FindProductInOrder() {
 
     }
 
-
+    //show popup when update successfully
     const handleFlat = () => {
         alert("Update sucessfully")
         setFlag(false)
@@ -56,7 +58,7 @@ export default function FindProductInOrder() {
             })
     }
 
-
+    //store value of quantity to update
     const handleChange = (e) => {
         setFormData([
             {
@@ -67,12 +69,15 @@ export default function FindProductInOrder() {
         ])
     }
 
+
+    //prevent user to type when update quantity 
     const handleKeyDown = (e) => {
         if (typeof e.key === 'string') {
             e.preventDefault()
         }
     }
 
+    // get product for user to add item to cart
     function handleCreate() {
         if (flagCreate) {
             setFlagCreate(false)
@@ -85,6 +90,8 @@ export default function FindProductInOrder() {
         }
     }
 
+
+    // add item to cart
     const handleAdd = (item) => {
         const data = {
             "orderId": id,
