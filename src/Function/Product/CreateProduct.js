@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Header from "../../Header";
 import CallApi from "../../Api/Api";
+import axios from "axios";
 
 export default function CreateProduct() {
+
     const [submit, setSubmit] = useState(false)
     const [formData, setFormData] = useState({
         productName: "",
@@ -22,14 +24,16 @@ export default function CreateProduct() {
 
     const handleChange = (e) => {
         const { name, value } = e.target
-        console.log(name,value);
         setFormData({ ...formData, [name]: value })
     }
     // goi api
     const handleSubmit = (e) => {
         e.preventDefault();
         CallApi(`api/Products`, 'POST', formData)
-            .then(item => setSubmit(true))
+            .then(item => {
+                console.log(item.headers);
+                setSubmit(true)
+            })
     }
 
     const handleOkAlert = () => {
@@ -38,7 +42,7 @@ export default function CreateProduct() {
     }
 
 
-    console.log(formData);
+   
     return (
         <>
             <Header />
