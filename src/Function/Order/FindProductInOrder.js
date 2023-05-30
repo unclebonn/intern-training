@@ -216,10 +216,19 @@ export default function FindProductInOrder() {
                 </div>
 
 
-                {order !== 'This order is not existed' &&
+                {order !== 'This order is not existed' ?
                     <div style={{ textAlign: 'center', margin: '10px' }}>
                         <button onClick={handleCreate} style={{ fontSize: '20px' }} >+</button>
                     </div>
+
+                    :
+
+                    <div style={{ textAlign: 'center', margin: '10px' }}>
+                        <Link to={'/orders/createOrder'}>
+                            <button>Create order</button>
+                        </Link>
+                    </div>
+
                 }
 
                 {flagCreate &&

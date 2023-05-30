@@ -118,7 +118,15 @@ export default function Product() {
                 </div>
 
                 {/* if the item return a string which means it not existed */}
-                {typeof products === 'string' ? <h2 style={{ textAlign: 'center' }}>{products}</h2> :
+                {typeof products === 'string'
+                    ?
+                    <div style={{ textAlign: 'center' }}>
+                        <h2 style={{ margin: '10px' }}>{products}</h2>
+                        <Link to={'/products/createProduct'}>
+                            <button>Create product</button>
+                        </Link>
+                    </div>
+                    :
                     <table border={1} >
                         <thead>
                             <tr>
