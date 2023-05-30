@@ -33,7 +33,6 @@ export default function UpdateOrder() {
 
     const handleChange = (e) => {
         const { name, value } = e.target
-        console.log(name, value);
         setFormData({ ...formData, [name]: value })
     }
 
@@ -50,7 +49,6 @@ export default function UpdateOrder() {
         alert('Update order successfully')
         setSubmit(false);
     }
-    console.log(formData);
 
     return (
         <React.Fragment>

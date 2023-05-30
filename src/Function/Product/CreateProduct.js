@@ -31,7 +31,6 @@ export default function CreateProduct() {
         e.preventDefault();
         CallApi(`api/Products`, 'POST', formData)
             .then(item => {
-                console.log(item.headers);
                 setSubmit(true)
             })
     }

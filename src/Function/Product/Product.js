@@ -13,15 +13,7 @@ export default function Product() {
     const handleFindProduct = () => {
         //check the input empty
         if (storeChangeValue === '') {
-            setStoreChangeValue(prev => {
-                prev = undefined
-                CallApi(`api/Products/${prev}`, 'GET', null)
-                    .then(item => {
-                        // check the item is existed or not 
-                        setProducts(typeof item === 'undefined' ? 'This item is not existed' : [item.data])
-                    })
-                return prev
-            })
+            setProducts('This item is not existed')
         } else {
             CallApi(`api/Products/${storeChangeValue}`, 'GET', null)
                 .then(item => {
@@ -32,8 +24,8 @@ export default function Product() {
 
 
 
-
     }
+
 
     //Get all products
     useEffect(() => {

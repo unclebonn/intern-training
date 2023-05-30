@@ -19,23 +19,6 @@ export default function Order() {
     }, [])
 
 
-
-    // const handleFindOrder = () => {
-    //     if (storeChangeValue === '') {
-    //         CallApi(`api/Orders/${undefined}`, 'GET', null)
-    //             .then(item => {
-    //                 setOrder(typeof item === 'undefined' ? 'This order is not existed' : item.data.orderDetails)
-
-    //             })
-    //     } else {
-    //         CallApi(`api/Orders/${storeChangeValue}`, 'GET', null)
-    //             .then(item => {
-    //                 setOrder(typeof item === 'undefined' ? 'This order is not existed' : item.data.orderDetails)
-
-    //             })
-    //     }
-
-    // }
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate(`/orders/find/${storeChangeValue}`)

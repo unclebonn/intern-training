@@ -28,7 +28,6 @@ export default function EditProduct() {
 
     const handleChange = (e) => {
         const { name, value } = e
-        console.log(name, value);
         setFormData({ ...formData, [name]: value })
     }
     // goi api

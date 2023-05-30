@@ -166,7 +166,7 @@ export default function FindProductInOrder() {
                                     <th>quantity</th>
                                     <th>Updatequantity</th>
                                     <th>orderDetails</th>
-                                    
+
                                     <th>Remove</th>
                                     <th>Update</th>
                                 </tr>
@@ -197,7 +197,7 @@ export default function FindProductInOrder() {
                                                 />
                                             </td>
                                             <td>{product.product.orderDetails}</td>
-                                            
+
                                             <td>
                                                 <button onClick={() => handleDelete(id, product.product.productId)}>X</button>
                                             </td>
@@ -216,22 +216,15 @@ export default function FindProductInOrder() {
                 </div>
 
 
-                <div style={{ textAlign: 'center', margin: '10px' }}>
-                    <button onClick={handleCreate} style={{ fontSize: '20px' }} >+</button>
-                </div>
+                {order !== 'This order is not existed' &&
+                    <div style={{ textAlign: 'center', margin: '10px' }}>
+                        <button onClick={handleCreate} style={{ fontSize: '20px' }} >+</button>
+                    </div>
+                }
 
                 {flagCreate &&
 
                     <div >
-                        {/* <div style={{ textAlign: 'right', marginRight: '35px', marginBottom: '10px' }}>
-                            <label style={{ marginRight: '10px' }}>
-                                Find product name:
-                            </label>
-                            <input
-                                defaultValue={''}
-                                onChange={(e) => findProduct(e)}
-                            />
-                        </div> */}
 
                         <table border={1} style={{ textAlign: 'center' }}>
                             <thead>
@@ -252,7 +245,6 @@ export default function FindProductInOrder() {
                                             <td>{item.quantityPerUnit}</td>
                                             <td>{item.unitPrice}</td>
                                             <td>
-
                                                 <button onClick={() => handleAdd(item)}>Add</button>
                                             </td>
                                         </tr>

@@ -50,7 +50,6 @@ export default function CreateOrder() {
         setFlag(false)
     }
 
-    console.log(inFo);
 
     return (
         <React.Fragment>
